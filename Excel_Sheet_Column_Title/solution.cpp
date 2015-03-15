@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <vector>
 
 using namespace std;
 
@@ -22,22 +21,14 @@ public:
 };
 
 int main(){
-    vector<int> a;
-    a.push_back(1);
-    a.push_back(2);
-    a.push_back(3);
     
-    vector<int> b;
-    b.push_back(4);
-    b.push_back(5);
-    b.push_back(6);
+    Solution s;
+    for(int i=1 ; i<30 ; i++){
+        cout << s.convertToTitle(i) << endl;
+    }
     
-    //b.insert(b.begin(),a.begin(),a.end());
-    a.insert(a.end(), b.begin(), b.end());
-
-    for(int i=0;i<a.size();i++)
-        cout<<a[i];
-	return 0;
+    
+    return 0;
 }
 
 
