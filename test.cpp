@@ -6,31 +6,31 @@ using namespace std;
 
 class Solution {
 public:
-    bool searchVector(vector<int> &vec, int target, int start, int end){
-        if(start > end)
-            return false;
-        int mid = (start + end) / 2;
-        if(vec[mid] == target)
-            return true;
-        if(vec[mid] > target)
-            return searchVector(vec, target, start, mid - 1);
-        else
-            return searchVector(vec, target, mid + 1, end);
-    }
-
-    bool searchMatrix(vector<vector<int> > &matrix, int target) {
-        vector<int> all = matrix[0];
-        for(int i=1 ; i<matrix.size() ; i++){
-            all.insert(all.end(), matrix[i].begin(), matrix[i].end());
+    vector<int> plusOne(vector<int> &digits) {
+        vector<int> res;
+        int sum = 0;
+        for(int i=0 ; i<digits.size() ; i++){
+            sum = sum * 10 + digits[i];
         }
-        return searchVector(all, target, 0, all.size() - 1);
+        sum ++;
+        while(sum != 0){
+            res.insert(res.begin(), sum % 10);
+            sum /= 10;
+        }
+        
+        return res;
     }
 };
 
 int main(){
     vector<int> a;
-    
-
+    for(int i=9 ; i>=0 ; i--)
+        a.push_back(i);
+    long long sum = 0;
+    for(int i=0 ; i<a.size() ; i++){
+        sum = sum * 10 + a[i];
+    }
+    cout << sum;
 	return 0;
 }
 
