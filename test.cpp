@@ -6,31 +6,24 @@ using namespace std;
 
 class Solution {
 public:
-    vector<int> plusOne(vector<int> &digits) {
+    vector<int> helper(vector<int> vec){
         vector<int> res;
-        int sum = 0;
-        for(int i=0 ; i<digits.size() ; i++){
-            sum = sum * 10 + digits[i];
-        }
-        sum ++;
-        while(sum != 0){
-            res.insert(res.begin(), sum % 10);
-            sum /= 10;
-        }
+        res.resize(1, 1);
+    }
+
+    vector<vector<int> > generate(int numRows) {
         
-        return res;
     }
 };
 
 int main(){
-    vector<int> a;
-    for(int i=9 ; i>=0 ; i--)
-        a.push_back(i);
-    long long sum = 0;
-    for(int i=0 ; i<a.size() ; i++){
-        sum = sum * 10 + a[i];
-    }
-    cout << sum;
+    vector<int> ms, res;
+    ms.push_back(1);
+    ms.push_back(2);
+
+    res.resize(ms.size() + 1, 1);
+    for(int i=0 ; i<res.size() ; i++)
+        cout << res[i] << " ";
 	return 0;
 }
 
