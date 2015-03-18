@@ -1,9 +1,3 @@
-#include <iostream>
-#include <string>
-#include <vector>
-
-using namespace std;
-
 class Solution {
 public:
     void transpose(vector<vector<int> > &matrix){
@@ -36,13 +30,3 @@ public:
         return ;
     }
 };
-int main(){
-    int m = 2;
-    int n = 2;
-    int *p = new int[m][n];
-    *p[0][0] = 1;
-    cout << *p[0][0];
-	return 0;
-}
-
-
